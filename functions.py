@@ -1,3 +1,6 @@
+import requests
+import json
+
 class Command:
     def __init__(self, content: str, author: str, id, args: list):
         self.content = content
@@ -12,7 +15,6 @@ class Selfbot:
         self.PREFIX = PREFIX
 
     def get_username(self, get_id=False):
-        import requests, json
 
         head = {
             'User-Agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -33,7 +35,6 @@ class Selfbot:
             return username, id
 
     def get_last_message(self, channel_id, get_message_id=False):
-        import requests, json
 
         head = {
             'User-Agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -54,8 +55,6 @@ class Selfbot:
             return content, author_name, id
         
     def send_message(self, text, channel_id, get_massage_id=False):
-        import requests
-        import json
 
         head = {
             'User-Agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -73,7 +72,6 @@ class Selfbot:
             return id
 
     def delete_message(self, message_id, channel_id):
-        import requests
 
         head = { 
             'User-Agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -85,7 +83,7 @@ class Selfbot:
         except: return 1
 
     def edit_message(self, new_text, message_id, channel_id):
-        import requests
+        
 
         head = { 
             'User-Agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -115,8 +113,6 @@ class Selfbot:
         
 # Broken
 def get_token(username, password):
-    import requests
-    import json
 
     head = { "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" }
     jsonn = {
