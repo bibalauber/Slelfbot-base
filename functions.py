@@ -128,5 +128,5 @@ def get_token(username, password):
         response = json.loads(r)
         return response['token']
     except Exception as e:
-        print(e, "wtj")
+        print(e)
         return 1    
